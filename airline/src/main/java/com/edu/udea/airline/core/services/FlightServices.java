@@ -46,7 +46,8 @@ public class FlightServices {
     }
     public List<Flight> searchFlight(Long id) {
         Flight flight = flightRepository.findById(id).orElse(null);
-        return flight != null ? Collections.singletonList(flight) : Collections.emptyList();
+        return flight != null ? Collections.singletonList(flight) : Collections.<Flight>emptyList();
+
     }
     public Flight updateFlight(Flight flight) {
         Long flightId = flight.getId();
