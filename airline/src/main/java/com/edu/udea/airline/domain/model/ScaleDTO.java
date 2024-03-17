@@ -2,13 +2,13 @@ package com.edu.udea.airline.domain.model;
 
 import com.edu.udea.airline.domain.AirplaneModel;
 import com.edu.udea.airline.domain.Airport;
-import com.edu.udea.airline.domain.Flight;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDateTime;
+
 
 @Setter
 @Getter
@@ -22,7 +22,4 @@ public class ScaleDTO {
     private LocalDateTime departureDate;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime arrivalDate;
-    private double price;
-
-
 }
