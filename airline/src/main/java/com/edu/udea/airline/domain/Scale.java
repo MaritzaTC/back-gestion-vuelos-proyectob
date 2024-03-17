@@ -1,18 +1,21 @@
 package com.edu.udea.airline.domain;
 
-import com.edu.udea.airline.domain.model.AirportDTO;
-import com.edu.udea.airline.domain.model.FlightDTO;
+
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
 
+/**
+ * Represents a scale in an airline system.
+ * A scale is a stopover between the origin and destination airports during a flight.
+ */
 @Data
 @Getter
 @Setter
@@ -41,14 +44,11 @@ public class Scale {
         @JoinColumn(name = "destination_airport")
         private Airport destinationAirport;
 
-        @JsonDeserialize(using = LocalDateDeserializer.class)
+        @JsonDeserialize(using = LocalDateTimeDeserializer.class)
         @Column(name = "departure_date", nullable = false)
         private LocalDateTime departureDate;
 
-        @JsonDeserialize(using = LocalDateDeserializer.class)
+        @JsonDeserialize(using = LocalDateTimeDeserializer.class)
         @Column(name = "arrival_date", nullable = false)
         private LocalDateTime arrivalDate;
-
-        @Column(name = "price", nullable = false)
-        private double price;
 }
