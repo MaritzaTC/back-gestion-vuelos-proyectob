@@ -1,4 +1,5 @@
 package com.edu.udea.airline.controller;
+
 import com.edu.udea.airline.domain.Scale;
 import com.edu.udea.airline.domain.model.FlightDTO;
 import com.edu.udea.airline.domain.model.ScaleDTO;
@@ -24,6 +25,7 @@ public class FlightManagementController {
     public List<Flight> searchFlights() {
         return flightService.searchFlights();
     }
+
     /**
      *
      * @param flight
@@ -31,25 +33,25 @@ public class FlightManagementController {
      */
     @PostMapping("/add")
     public FlightDTO addFlight(@RequestBody FlightDTO flight) {
-        Flight flightTransformado = modelMapper.map(flight, Flight.class);
+        Flight transformedFlight = modelMapper.map(flight, Flight.class);
 
-        Flight savedFlight = flightService.addFlight(flightTransformado);
+        Flight savedFlight = flightService.addFlight(transformedFlight);
 
         return modelMapper.map(savedFlight, FlightDTO.class);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteFlight(@PathVariable Long id){
+    public void deleteFlight(@PathVariable Long id) {
         flightService.deleteFlight(id);
     }
 
     @GetMapping("/search/{id}")
-    public List<Flight> searchFlight(@PathVariable Long id){
+    public List<Flight> searchFlight(@PathVariable Long id) {
         return flightService.searchFlight(id);
     }
 
     @PutMapping("/update")
-    public Flight updateFlight(@RequestBody Flight flight){
-        return  flightService.updateFlight(flight);
+    public Flight updateFlight(@RequestBody Flight flight) {
+        return flightService.updateFlight(flight);
     }
 }
