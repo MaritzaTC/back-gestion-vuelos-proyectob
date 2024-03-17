@@ -1,6 +1,9 @@
 package com.edu.udea.airline.controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.edu.udea.airline.domain.Scale;
+import com.edu.udea.airline.domain.model.FlightDTO;
+import com.edu.udea.airline.domain.model.ScaleDTO;
 import com.edu.udea.airline.core.services.FlightServices;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.edu.udea.airline.domain.Flight;
@@ -14,6 +17,9 @@ public class FlightManagementController {
     @Autowired
     private FlightServices flightService;
 
+    @Autowired
+    private ModelMapper modelMapper;
+
     @GetMapping("/search")
     public List<Flight> searchFlights() {
         return flightService.searchFlights();
@@ -24,8 +30,12 @@ public class FlightManagementController {
      * @return
      */
     @PostMapping("/add")
-    public Flight addFlight(@RequestBody Flight flight){
-        return flightService.addFlight(flight);
+    public FlightDTO addFlight(@RequestBody FlightDTO flight) {
+        Flight flightTransformado = modelMapper.map(flight, Flight.class);
+
+        Flight savedFlight = flightService.addFlight(flightTransformado);
+
+        return modelMapper.map(savedFlight, FlightDTO.class);
     }
 
     @DeleteMapping("/delete/{id}")
