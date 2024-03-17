@@ -11,6 +11,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
+/**
+ * Represents an airplane model.
+ */
 @Data
 @Getter
 @Setter

@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Represents an employee in the airline domain.
+ */
 @Data
 @Getter
 @Setter

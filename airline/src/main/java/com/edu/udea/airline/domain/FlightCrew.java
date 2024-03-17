@@ -7,6 +7,9 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Represents a flight crew member in the airline system.
+ */
 @Data
 @Getter
 @Setter

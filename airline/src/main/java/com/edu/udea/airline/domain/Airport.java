@@ -11,6 +11,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
+/**
+ * Represents an airport.
+ */
 @Data
 @Getter
 @Setter
@@ -18,6 +21,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "Airport", schema = "Code_factory")
 public class Airport implements Serializable {
+
     @Id
     @Column(name = "airport_code", nullable = false, unique = true, updatable = true, length = 3)
     private String id;
@@ -25,7 +29,6 @@ public class Airport implements Serializable {
     @NotNull
     @Column(name = "name", nullable = false, length = 80)
     private String name;
-
     @NotNull
     @Column(name = "type", nullable = false, length = 20)
     private String type;
@@ -41,6 +44,4 @@ public class Airport implements Serializable {
     @NotNull
     @Column(name = "runways", nullable = false, length = 2, updatable = false)
     private double runways;
-
-
 }
