@@ -1,4 +1,4 @@
-# Primer sprint fabrica escuela 
+# Primer sprint fábrica escuela 
 Para el primer sprint, nos enfocamos en la historia de usuario que implica la creación de un vuelo directo. 
 En esta funcionalidad, un administrador tiene la capacidad de crear un vuelo y asociar al menos una escala a él.
 Esta escala representa el trayecto del vuelo desde el aeropuerto de origen hasta el destino. Además, se proporciona 
