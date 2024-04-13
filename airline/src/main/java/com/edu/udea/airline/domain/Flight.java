@@ -24,12 +24,7 @@ import java.util.Set;
 @Table(name = "flight", schema = "Code_factory")
 public class Flight {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "flight_id", updatable = false, nullable = false)
-    private Long id;
-
-    @NotNull
-    @Column(name = "flight_number", nullable = false)
+    @Column(name = "flight_number", nullable = false,unique = true, updatable = true, length = 8)
     private String flightNumber;
 
     @NotNull
@@ -46,5 +41,6 @@ public class Flight {
 
     @OneToMany(mappedBy = "flight")
     private Set<Scale> scales = new HashSet<Scale>();
+
 
 }

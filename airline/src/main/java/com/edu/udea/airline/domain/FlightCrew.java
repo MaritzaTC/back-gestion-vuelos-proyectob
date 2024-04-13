@@ -24,7 +24,7 @@ public class FlightCrew {
     private Long id;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "flight_id")
+    @JoinColumn(name = "flight_number")
     private Flight flight;
 
     @ManyToOne(cascade = CascadeType.ALL)

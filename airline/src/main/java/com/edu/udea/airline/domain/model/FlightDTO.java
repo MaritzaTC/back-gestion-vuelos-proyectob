@@ -17,10 +17,6 @@ import java.util.List;
 @ToString
 public class FlightDTO {
     /**
-     * Unique identifier of the flight.
-     */
-    private Long id;
-    /**
      * Flight number (Generally it is two letters of the airline and 3 or 4 numbers).
      * Rule of the ICAO (International Civil Aviation Organization) and the IATA (Association
      * International Air Transport). .
