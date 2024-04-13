@@ -42,5 +42,7 @@ public class Flight {
     @OneToMany(mappedBy = "flight")
     private Set<Scale> scales = new HashSet<Scale>();
 
+    @Column(name = "flight_type")
+    private String typeFlight;
 
 }

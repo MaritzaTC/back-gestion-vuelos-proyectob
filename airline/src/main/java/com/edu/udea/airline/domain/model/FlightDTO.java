@@ -40,5 +40,5 @@ public class FlightDTO {
      * origin and destination airports, departure and arrival dates for each scale.
      */
     private List<ScaleDTO> scales;
-
+    private String typeFlight;
 }
